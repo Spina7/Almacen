@@ -1,7 +1,7 @@
 <?php
   $page_title = 'Editar Usuario';
   require_once('includes/load.php');
-  // Checkin What level user has permission to view this page
+  // Comprobar en qué nivel el usuario tiene permiso para ver esta página
    page_require_level(1);
 ?>
 <?php
@@ -14,7 +14,7 @@
 ?>
 
 <?php
-//Update User basic info
+//Actualizar la información básica del usuario
   if(isset($_POST['update'])) {
     $req_fields = array('name','username','level');
     validate_fields($req_fields);
@@ -40,7 +40,7 @@
   }
 ?>
 <?php
-// Update user password
+// Actualizar contraseña de usuario
 if(isset($_POST['update-pass'])) {
   $req_fields = array('password');
   validate_fields($req_fields);
@@ -107,7 +107,7 @@ if(isset($_POST['update-pass'])) {
        </div>
      </div>
   </div>
-  <!-- Change password form -->
+  <!-- Formulario de cambio de contraseña -->
   <div class="col-md-6">
     <div class="panel panel-default">
       <div class="panel-heading">

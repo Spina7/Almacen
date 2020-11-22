@@ -1,7 +1,7 @@
 <?php
   $page_title = 'Edit sale';
   require_once('includes/load.php');
-  // Checkin What level user has permission to view this page
+  // Comprobar en qué nivel el usuario tiene permiso para ver esta página
    page_require_level(3);
 ?>
 <?php

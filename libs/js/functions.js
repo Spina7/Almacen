@@ -9,7 +9,7 @@ function suggetion() {
 
          if(formData['product_name'].length >= 1){
 
-           // process the form
+           // procesar el formulario
            $.ajax({
                type        : 'POST',
                url         : 'ajax.php',
@@ -47,7 +47,7 @@ function suggetion() {
       var formData = {
           'p_name' : $('input[name=title]').val()
       };
-        // process the form
+        // procesar el formulario
         $.ajax({
             type        : 'POST',
             url         : 'ajax.php',
@@ -77,15 +77,15 @@ function suggetion() {
 
   $(document).ready(function() {
 
-    //tooltip
+    //información sobre herramientas
     $('[data-toggle="tooltip"]').tooltip();
 
     $('.submenu-toggle').click(function () {
        $(this).parent().children('ul.submenu').toggle(200);
     });
-    //suggetion for finding product names
+    //sugerencia para encontrar nombres de productos
     suggetion();
-    // Callculate total ammont
+    // Calcular la cantidad total
     total();
 
     $('.datepicker')

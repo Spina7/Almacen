@@ -19,7 +19,7 @@
   }
 ?>
 <?php
- //update user other info
+ //actualizar otra información del usuario
   if(isset($_POST['update'])){
     $req_fields = array('name','username' );
     validate_fields($req_fields);

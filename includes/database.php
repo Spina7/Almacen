@@ -11,7 +11,7 @@ class MySqli_DB {
     }
 
 /*--------------------------------------------------------------*/
-/* Function for Open database connection
+/* Función para conexión de base de datos abierta
 /*--------------------------------------------------------------*/
 public function db_connect()
 {
@@ -28,7 +28,7 @@ public function db_connect()
          }
 }
 /*--------------------------------------------------------------*/
-/* Function for Close database connection
+/* Función para cerrar la conexión a la base de datos
 /*--------------------------------------------------------------*/
 
 public function db_disconnect()
@@ -40,7 +40,7 @@ public function db_disconnect()
   }
 }
 /*--------------------------------------------------------------*/
-/* Function for mysqli query
+/* Función para consulta mysqli
 /*--------------------------------------------------------------*/
 public function query($sql)
    {
@@ -49,9 +49,9 @@ public function query($sql)
           $this->query_id = $this->con->query($sql);
       }
       if (!$this->query_id)
-        // only for Develope mode
+        // solo para el modo de desarrollador
               die("Error en esta consulta :<pre> " . $sql ."</pre>");
-       // For production mode
+       // Para el modo de producción
         //  die("Error on Query");
 
        return $this->query_id;
@@ -59,7 +59,7 @@ public function query($sql)
    }
 
 /*--------------------------------------------------------------*/
-/* Function for Query Helper
+/* Función para el asistente de consultas
 /*--------------------------------------------------------------*/
 public function fetch_array($statement)
 {
@@ -86,14 +86,14 @@ public function affected_rows()
   return mysqli_affected_rows($this->con);
 }
 /*--------------------------------------------------------------*/
- /* Function for Remove escapes special
- /* characters in a string for use in an SQL statement
+ /* Función para Eliminar escapes especiales
+ /* caracteres en una cadena para usar en una declaración SQL
  /*--------------------------------------------------------------*/
  public function escape($str){
    return $this->con->real_escape_string($str);
  }
 /*--------------------------------------------------------------*/
-/* Function for while loop
+/* Función para bucle while
 /*--------------------------------------------------------------*/
 public function while_loop($loop){
  global $db;

@@ -1,20 +1,17 @@
 <?php
 /*
 |--------------------------------------------------------------------------
-| OWSA-INV V2
+| Mishystem-INV V2
 |--------------------------------------------------------------------------
-| Author: Siamon Hasan
-| Project Name: OSWA-INV
-| Version: v2
-| Offcial page: http://oswapp.com/
-| facebook Page: https://www.facebook.com/oswapp
+| Project Name: Mishystem
+| Version: v1
 |
 |
 |
 */
-  define( 'DB_HOST', 'localhost' );          // Set database host
-  define( 'DB_USER', 'root' );             // Set database user
-  define( 'DB_PASS', '' );             // Set database password
-  define( 'DB_NAME', 'oswa_inv' );        // Set database name
+  define( 'DB_HOST', 'localhost' );          // Establecer host de base de datos
+  define( 'DB_USER', 'root' );             // Establecer usuario de base de datos
+  define( 'DB_PASS', '' );             // Establecer contraseña de base de datos
+  define( 'DB_NAME', 'oswa_inv' );        // Establecer el nombre de la base de datos
 
 ?>

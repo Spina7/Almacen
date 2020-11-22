@@ -3,9 +3,9 @@
   require_once('includes/load.php');
 ?>
 <?php
-// Checkin What level user has permission to view this page
+// Comprobar en qué nivel el usuario tiene permiso para ver esta página
  page_require_level(1);
-//pull out all user form database
+//extraer toda la base de datos de formularios de usuario
  $all_users = find_all_user();
 ?>
 <?php include_once('layouts/header.php'); ?>

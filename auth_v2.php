@@ -10,11 +10,11 @@ $password = remove_junk($_POST['password']);
     $user = authenticate_v2($username, $password);
 
         if($user):
-           //create session with id
+           //crear sesión con id
            $session->login($user['id']);
-           //Update Sign in time
+           //Actualizar hora de inicio de sesión
            updateLastLogIn($user['id']);
-           // redirect user to group home page by user level
+           // redirigir al usuario a la página de inicio del grupo por nivel de usuario
            if($user['user_level'] === '1'):
              $session->msg("s", "Hello ".$user['username'].", Welcome to OSWA-INV.");
              redirect('admin.php',false);

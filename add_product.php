@@ -1,7 +1,7 @@
 <?php
   $page_title = 'Agregar producto';
   require_once('includes/load.php');
-  // Checkin What level user has permission to view this page
+  // Comprobar en qué nivel el usuario tiene permiso para ver esta página
   page_require_level(2);
   $all_categories = find_all('categories');
   $all_photo = find_all('media');

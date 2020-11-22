@@ -1,7 +1,7 @@
 <?php
   $page_title = 'Agregar usuarios';
   require_once('includes/load.php');
-  // Checkin What level user has permission to view this page
+  // Comprobar en qué nivel el usuario tiene permiso para ver esta página
   page_require_level(1);
   $groups = find_all('user_groups');
 ?>
@@ -23,11 +23,11 @@
         $query .=" '{$name}', '{$username}', '{$password}', '{$user_level}','1'";
         $query .=")";
         if($db->query($query)){
-          //sucess
+          //éxito
           $session->msg('s'," Cuenta de usuario ha sido creada");
           redirect('add_user.php', false);
         } else {
-          //failed
+          //ha fallado
           $session->msg('d',' No se pudo crear la cuenta.');
           redirect('add_user.php', false);
         }

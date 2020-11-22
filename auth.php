@@ -8,9 +8,9 @@ $password = remove_junk($_POST['password']);
 if(empty($errors)){
   $user_id = authenticate($username, $password);
   if($user_id){
-    //create session with id
+    //crear sesión con id
      $session->login($user_id);
-    //Update Sign in time
+    //Actualizar hora de inicio de sesión
      updateLastLogIn($user_id);
      $session->msg("s", "Bienvenido a OSWA-INV.");
      redirect('home.php',false);

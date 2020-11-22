@@ -2,8 +2,8 @@
  $errors = array();
 
  /*--------------------------------------------------------------*/
- /* Function for Remove escapes special
- /* characters in a string for use in an SQL statement
+ /* Función para Eliminar escapes especiales
+ /* caracteres en una cadena para usar en una declaración SQL
  /*--------------------------------------------------------------*/
 function real_escape($str){
   global $con;
@@ -11,7 +11,7 @@ function real_escape($str){
   return $escape;
 }
 /*--------------------------------------------------------------*/
-/* Function for Remove html characters
+/* Función para eliminar caracteres html
 /*--------------------------------------------------------------*/
 function remove_junk($str){
   $str = nl2br($str);
@@ -19,7 +19,7 @@ function remove_junk($str){
   return $str;
 }
 /*--------------------------------------------------------------*/
-/* Function for Uppercase first character
+/* Función para el primer carácter en mayúsculas
 /*--------------------------------------------------------------*/
 function first_character($str){
   $val = str_replace('-'," ",$str);
@@ -27,7 +27,7 @@ function first_character($str){
   return $val;
 }
 /*--------------------------------------------------------------*/
-/* Function for Checking input fields not empty
+/* Función para verificar campos de entrada no vacíos
 /*--------------------------------------------------------------*/
 function validate_fields($var){
   global $errors;
@@ -40,7 +40,7 @@ function validate_fields($var){
   }
 }
 /*--------------------------------------------------------------*/
-/* Function for Display Session Message
+/* Función para mostrar mensaje de sesión
    Ex echo displayt_msg($message);
 /*--------------------------------------------------------------*/
 function display_msg($msg =''){
@@ -58,7 +58,7 @@ function display_msg($msg =''){
    }
 }
 /*--------------------------------------------------------------*/
-/* Function for redirect
+/* Función para redireccionar
 /*--------------------------------------------------------------*/
 function redirect($url, $permanent = false)
 {
@@ -70,7 +70,7 @@ function redirect($url, $permanent = false)
     exit();
 }
 /*--------------------------------------------------------------*/
-/* Function for find out total saleing price, buying price and profit
+/* Ffunción para averiguar el precio de venta total, el precio de compra y las ganancias
 /*--------------------------------------------------------------*/
 function total_price($totals){
    $sum = 0;
@@ -83,7 +83,7 @@ function total_price($totals){
    return array($sum,$profit);
 }
 /*--------------------------------------------------------------*/
-/* Function for Readable date time
+/* Función para fecha y hora legibles
 /*--------------------------------------------------------------*/
 function read_date($str){
      if($str)
@@ -92,20 +92,20 @@ function read_date($str){
       return null;
   }
 /*--------------------------------------------------------------*/
-/* Function for  Readable Make date time
+/* Función para hacer fecha y hora legibles
 /*--------------------------------------------------------------*/
 function make_date(){
   return strftime("%Y-%m-%d %H:%M:%S", time());
 }
 /*--------------------------------------------------------------*/
-/* Function for  Readable date time
+/* Función para fecha y hora legibles
 /*--------------------------------------------------------------*/
 function count_id(){
   static $count = 1;
   return $count++;
 }
 /*--------------------------------------------------------------*/
-/* Function for Creting random string
+/* Función para crear una cadena aleatoria
 /*--------------------------------------------------------------*/
 function randString($length = 5)
 {

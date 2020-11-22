@@ -2,7 +2,7 @@
   require_once('includes/load.php');
 
 /*--------------------------------------------------------------*/
-/* Function for find all database table rows by table name
+/* Función para buscar todas las filas de la tabla de la base de datos por nombre de tabla
 /*--------------------------------------------------------------*/
 function find_all($table) {
    global $db;
@@ -12,7 +12,7 @@ function find_all($table) {
    }
 }
 /*--------------------------------------------------------------*/
-/* Function for Perform queries
+/* Función para realizar consultas
 /*--------------------------------------------------------------*/
 function find_by_sql($sql)
 {
@@ -22,7 +22,7 @@ function find_by_sql($sql)
  return $result_set;
 }
 /*--------------------------------------------------------------*/
-/*  Function for Find data from table by id
+/*  Función para buscar datos de la tabla por id
 /*--------------------------------------------------------------*/
 function find_by_id($table,$id)
 {
@@ -37,7 +37,7 @@ function find_by_id($table,$id)
      }
 }
 /*--------------------------------------------------------------*/
-/* Function for Delete data from table by id
+/* Función para eliminar datos de la tabla por id
 /*--------------------------------------------------------------*/
 function delete_by_id($table,$id)
 {
@@ -52,7 +52,7 @@ function delete_by_id($table,$id)
    }
 }
 /*--------------------------------------------------------------*/
-/* Function for Count id  By table name
+/* Función para ID de recuento por nombre de tabla
 /*--------------------------------------------------------------*/
 
 function count_by_id($table){
@@ -65,7 +65,7 @@ function count_by_id($table){
   }
 }
 /*--------------------------------------------------------------*/
-/* Determine if database table exists
+/* Determinar si existe la tabla de la base de datos
 /*--------------------------------------------------------------*/
 function tableExists($table){
   global $db;
@@ -78,8 +78,8 @@ function tableExists($table){
       }
   }
  /*--------------------------------------------------------------*/
- /* Login with the data provided in $_POST,
- /* coming from the login form.
+ /* Inicie sesión con los datos proporcionados en $ _POST,
+ /* procedente del formulario de inicio de sesión.
 /*--------------------------------------------------------------*/
   function authenticate($username='', $password='') {
     global $db;
@@ -97,9 +97,9 @@ function tableExists($table){
    return false;
   }
   /*--------------------------------------------------------------*/
-  /* Login with the data provided in $_POST,
-  /* coming from the login_v2.php form.
-  /* If you used this method then remove authenticate function.
+  /* Inicie sesión con los datos proporcionados en $ _POST,
+  /* procedente del formulario login_v2.php.
+  /* Si usó este método, elimine la función de autenticación.
  /*--------------------------------------------------------------*/
    function authenticate_v2($username='', $password='') {
      global $db;
@@ -119,7 +119,7 @@ function tableExists($table){
 
 
   /*--------------------------------------------------------------*/
-  /* Find current log in user by session id
+  /* Buscar usuario de inicio de sesión actual por ID de sesión
   /*--------------------------------------------------------------*/
   function current_user(){
       static $current_user;
@@ -133,8 +133,8 @@ function tableExists($table){
     return $current_user;
   }
   /*--------------------------------------------------------------*/
-  /* Find all user by
-  /* Joining users table and user gropus table
+  /* Buscar todos los usuarios por
+  /* la tabla de usuarios y a la tabla de grupos de usuarios
   /*--------------------------------------------------------------*/
   function find_all_user(){
       global $db;
@@ -148,7 +148,7 @@ function tableExists($table){
       return $result;
   }
   /*--------------------------------------------------------------*/
-  /* Function to update the last log in of a user
+  /* Función para actualizar el último inicio de sesión de un usuario.
   /*--------------------------------------------------------------*/
 
  function updateLastLogIn($user_id)
@@ -161,7 +161,7 @@ function tableExists($table){
 	}
 
   /*--------------------------------------------------------------*/
-  /* Find all Group name
+  /* Buscar todo el nombre del grupo
   /*--------------------------------------------------------------*/
   function find_by_groupName($val)
   {
@@ -171,7 +171,7 @@ function tableExists($table){
     return($db->num_rows($result) === 0 ? true : false);
   }
   /*--------------------------------------------------------------*/
-  /* Find group level
+  /* Encuentra el nivel de grupo
   /*--------------------------------------------------------------*/
   function find_by_groupLevel($level)
   {
@@ -181,21 +181,21 @@ function tableExists($table){
     return($db->num_rows($result) === 0 ? true : false);
   }
   /*--------------------------------------------------------------*/
-  /* Function for cheaking which user level has access to page
+  /* Función para comprobar qué nivel de usuario tiene acceso a la página
   /*--------------------------------------------------------------*/
    function page_require_level($require_level){
      global $session;
      $current_user = current_user();
      $login_level = find_by_groupLevel($current_user['user_level']);
-     //if user not login
+     //Si el usuario no inicia sesión
      if (!$session->isUserLoggedIn(true)):
             $session->msg('d','Por favor Iniciar sesión...');
             redirect('index.php', false);
-      //if Group status Deactive
+      //si el estado del grupo es desactivado
      elseif($login_level['group_status'] === '0'):
            $session->msg('d','Este nivel de usaurio esta inactivo!');
            redirect('home.php',false);
-      //cheackin log in User level and Require level is Less than or equal to
+      //Iniciar sesión en el nivel de usuario y el nivel requerido es menor o igual a
      elseif($current_user['user_level'] <= (int)$require_level):
               return true;
       else:
@@ -205,8 +205,8 @@ function tableExists($table){
 
      }
    /*--------------------------------------------------------------*/
-   /* Function for Finding all product name
-   /* JOIN with categorie  and media database table
+   /* Función para encontrar todos los nombres de productos
+   /* con la tabla de base de datos de categorías y medios
    /*--------------------------------------------------------------*/
   function join_product_table(){
      global $db;
@@ -220,8 +220,8 @@ function tableExists($table){
 
    }
   /*--------------------------------------------------------------*/
-  /* Function for Finding all product name
-  /* Request coming from ajax.php for auto suggest
+  /* Función para encontrar todos los nombres de productos
+  /* procedente de ajax.php para sugerir automáticamente
   /*--------------------------------------------------------------*/
 
    function find_product_by_title($product_name){
@@ -233,8 +233,8 @@ function tableExists($table){
    }
 
   /*--------------------------------------------------------------*/
-  /* Function for Finding all product info by product title
-  /* Request coming from ajax.php
+  /* Función para encontrar toda la información del producto por título del producto
+  /* procedente de ajax.php
   /*--------------------------------------------------------------*/
   function find_all_product_info_by_title($title){
     global $db;
@@ -245,7 +245,7 @@ function tableExists($table){
   }
 
   /*--------------------------------------------------------------*/
-  /* Function for Update product quantity
+  /* Función para actualizar la cantidad de producto
   /*--------------------------------------------------------------*/
   function update_product_qty($qty,$p_id){
     global $db;
@@ -257,7 +257,7 @@ function tableExists($table){
 
   }
   /*--------------------------------------------------------------*/
-  /* Function for Display Recent product Added
+  /* Función para mostrar producto reciente agregado
   /*--------------------------------------------------------------*/
  function find_recent_product_added($limit){
    global $db;
@@ -269,7 +269,7 @@ function tableExists($table){
    return find_by_sql($sql);
  }
  /*--------------------------------------------------------------*/
- /* Function for Find Highest saleing Product
+ /* Función para encontrar el producto más vendido
  /*--------------------------------------------------------------*/
  function find_higest_saleing_product($limit){
    global $db;
@@ -281,7 +281,7 @@ function tableExists($table){
    return $db->query($sql);
  }
  /*--------------------------------------------------------------*/
- /* Function for find all sales
+ /* Función para buscar todas las ventas
  /*--------------------------------------------------------------*/
  function find_all_sale(){
    global $db;
@@ -292,7 +292,7 @@ function tableExists($table){
    return find_by_sql($sql);
  }
  /*--------------------------------------------------------------*/
- /* Function for Display Recent sale
+ /* Función para mostrar venta reciente
  /*--------------------------------------------------------------*/
 function find_recent_sale_added($limit){
   global $db;
@@ -303,7 +303,7 @@ function find_recent_sale_added($limit){
   return find_by_sql($sql);
 }
 /*--------------------------------------------------------------*/
-/* Function for Generate sales report by two dates
+/* Función para generar informe de ventas en dos fechas
 /*--------------------------------------------------------------*/
 function find_sale_by_dates($start_date,$end_date){
   global $db;
@@ -322,7 +322,7 @@ function find_sale_by_dates($start_date,$end_date){
   return $db->query($sql);
 }
 /*--------------------------------------------------------------*/
-/* Function for Generate Daily sales report
+/* Función para generar informe de ventas diarias
 /*--------------------------------------------------------------*/
 function  dailySales($year,$month){
   global $db;
@@ -336,7 +336,7 @@ function  dailySales($year,$month){
   return find_by_sql($sql);
 }
 /*--------------------------------------------------------------*/
-/* Function for Generate Monthly sales report
+/* Función para generar informe de ventas mensual
 /*--------------------------------------------------------------*/
 function  monthlySales($year){
   global $db;

@@ -6,7 +6,7 @@ class  Media {
   public $fileName;
   public $fileType;
   public $fileTempPath;
-  //Set destination for upload
+  //Establecer destino para la carga
   public $userPath = SITE_ROOT.DS.'..'.DS.'uploads/users';
   public $productPath = SITE_ROOT.DS.'..'.DS.'uploads/products';
 
@@ -74,7 +74,7 @@ class  Media {
     endif;
  }
  /*--------------------------------------------------------------*/
- /* Function for Process media file
+ /* Función para procesar archivos multimedia
  /*--------------------------------------------------------------*/
   public function process_media(){
     if(!empty($this->errors)){
@@ -111,7 +111,7 @@ class  Media {
 
   }
   /*--------------------------------------------------------------*/
-  /* Function for Process user image
+  /* Función para procesar imagen de usuario
   /*--------------------------------------------------------------*/
  public function process_user($id){
 
@@ -150,7 +150,7 @@ class  Media {
     }
  }
  /*--------------------------------------------------------------*/
- /* Function for Update user image
+ /* Función para actualizar la imagen del usuario
  /*--------------------------------------------------------------*/
   private function update_userImg($id){
      global $db;
@@ -162,7 +162,7 @@ class  Media {
 
    }
  /*--------------------------------------------------------------*/
- /* Function for Delete old image
+ /* Función para eliminar imagen antigua
  /*--------------------------------------------------------------*/
   public function user_image_destroy($id){
      $image = find_by_id('users',$id);
@@ -176,7 +176,7 @@ class  Media {
 
    }
 /*--------------------------------------------------------------*/
-/* Function for insert media image
+/* Función para insertar imagen multimedia
 /*--------------------------------------------------------------*/
   private function insert_media(){
 
@@ -191,7 +191,7 @@ class  Media {
 
   }
 /*--------------------------------------------------------------*/
-/* Function for Delete media by id
+/* Función para eliminar medios por id
 /*--------------------------------------------------------------*/
    public function media_destroy($id,$file_name){
      $this->fileName = $file_name;
