@@ -4,7 +4,7 @@
    page_require_level(3);
 ?>
 <?php
-//update user image
+//actualizar imagen de usuario
   if(isset($_POST['submit'])) {
   $photo = new Media();
   $user_id = (int)$_POST['user_id'];
