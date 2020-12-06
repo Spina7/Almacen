@@ -12,7 +12,7 @@ if(empty($errors)){
      $session->login($user_id);
     //Actualizar hora de inicio de sesión
      updateLastLogIn($user_id);
-     $session->msg("s", "Bienvenido a OSWA-INV.");
+     $session->msg("s", "Bienvenido a Mishystem-INV.");
      redirect('home.php',false);
 
   } else {

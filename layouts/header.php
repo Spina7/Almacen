@@ -20,7 +20,8 @@
       <div class="logo pull-left"> Mishystem - Inventory </div>
       <div class="header-content">
       <div class="header-date pull-left">
-        <strong><?php echo date("d/m/Y  g:i a");?></strong>
+      <?php date_default_timezone_set("America/Mexico_City");?>
+        <strong><?php echo date("d/m/Y  h-5:i ");?></strong>
       </div>
       <div class="pull-right clearfix">
         <ul class="info-menu list-inline list-unstyled">
